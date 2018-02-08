@@ -58,3 +58,22 @@ img_tag = soup.find('img')
 print('The img source:')
 print(img_tag['src'])
 print('------')
+
+print("LECTURE EXERCISE ASSIGNMENTS")
+print('------')
+
+all_goodbye_div = soup.find("div", class_="goodbye")
+all_goodbye_div_child = all_goodbye_div.find("ol")
+all_goodbye_div_child_children = all_goodbye_div_child.find_all("li")
+for item in all_goodbye_div_child_children:
+	print(item.string)
+print('------')
+
+print("Width of img element")
+print(img_tag["width"])
+print('------')
+
+print("URL that <a> tag points to")
+for a in soup.find_all("a", href=True):
+	print(a["href"])
+print('------')
